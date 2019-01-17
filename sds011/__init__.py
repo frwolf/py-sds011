@@ -92,7 +92,7 @@ class SDS011(object):
 
         raw = self._get_reply()
         if raw is None:
-            return None  #TODO:
+            return (None, None)  #TODO:
         data = struct.unpack('<HH', raw[2:6])
         pm25 = data[0] / 10.0
         pm10 = data[1] / 10.0
